@@ -18,6 +18,8 @@ const Routes = () => {
       <Route path="auth" element={isAuthenticated ? <Navigate to="/" /> : <Outlet />}>
         <Route path="login" element={<Auth.Login />} />
         <Route path="register" element={<Auth.Register />} />
+        <Route path="forgot-password" element={<Auth.ForgotPassword />} />
+        <Route path="reset-password" element={<Auth.ResetPassword />} />
         <Route path="*" index element={<Navigate to="/auth/login" />} />
       </Route>
 
