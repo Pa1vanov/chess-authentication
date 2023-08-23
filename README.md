@@ -1,6 +1,2 @@
-# ---------- 19.08.23 ----------(134)
-
-## Chess
-
-    ✅ Firebase auth
-    ✅ Chess
+Authentication with fire base
+Chess game
