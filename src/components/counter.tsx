@@ -1,4 +1,5 @@
 import React from 'react'
+import { Box, Text } from '@mantine/core'
 
 interface CountDisplayProps {
   count: number
@@ -6,14 +7,20 @@ interface CountDisplayProps {
 
 const CountDisplay: React.FC<CountDisplayProps> = ({ count }) => {
   const containerStyle = {
+    display: 'grid',
+    placeItems: 'center',
     backgroundColor: '#68FD8F',
-    color: 'black',
-    padding: '10px',
+    color: 'white',
+    padding: '15px',
     borderRadius: '10px',
     fontSize: '24px'
   }
 
-  return <div style={containerStyle}>Count: {count}</div>
+  return (
+    <Box sx={{ display: 'flex' }} style={containerStyle}>
+      Count: <Text>{count}</Text>
+    </Box>
+  )
 }
 
 export default CountDisplay

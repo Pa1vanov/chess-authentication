@@ -14,8 +14,10 @@ const Cell: React.FC<CellProps> = ({ isBlack, onClick, initialValue }) => {
   const cellBorder = isBlack ? 'none' : '1px solid #68FD8F'
 
   return (
-    <Box className="cell" onClick={onClick} style={{ backgroundColor: cellColor, border: cellBorder }}>
-      {initialValue}
+    <Box>
+      <Box className="cell" onClick={onClick} style={{ marginLeft: '10px', backgroundColor: cellColor, border: cellBorder }}>
+        {initialValue}
+      </Box>
     </Box>
   )
 }

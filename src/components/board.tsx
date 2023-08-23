@@ -1,4 +1,5 @@
 import React from 'react'
+import { Box } from '@mantine/core'
 
 import { Cell } from '.'
 
@@ -27,16 +28,16 @@ const Chessboard: React.FC<ChessboardProps> = ({ boardData, selectedValue, onCel
 
     for (let rowIndex = 0; rowIndex < 8; rowIndex++) {
       rows.push(
-        <div key={rowIndex} className="row">
+        <Box key={rowIndex} className="row">
           {renderRow(rowIndex)}
-        </div>
+        </Box>
       )
     }
 
     return rows
   }
 
-  return <div className="chessboard">{renderBoard()}</div>
+  return <Box className="chessboard">{renderBoard()}</Box>
 }
 
 export default Chessboard
