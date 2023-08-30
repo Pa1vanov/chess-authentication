@@ -1,7 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LoadingOverlay } from '@mantine/core'
-import { emailVerify } from 'modules/auth/service'
 import queryString from 'query-string'
 
 interface ActionProps {}
@@ -17,11 +16,6 @@ const Action = (props: ActionProps) => {
 
   React.useEffect(() => {
     switch (mode) {
-      case 'verifyEmail': {
-        emailVerify(oobCode)
-        window.location.href = '/'
-        break
-      }
       case 'resetPassword': {
         navigate(`/auth/reset-password?oobCode=${oobCode}`)
         break

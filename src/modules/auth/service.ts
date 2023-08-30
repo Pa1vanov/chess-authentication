@@ -1,9 +1,7 @@
 import { auth, googleProvider } from 'config'
 import {
-  applyActionCode,
   confirmPasswordReset,
   createUserWithEmailAndPassword,
-  sendEmailVerification,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -22,10 +20,6 @@ export const register = ({ email, password }: Pick<IForm.Register, 'email' | 'pa
 export const updateProfile = (user: User, { name }: Omit<IForm.Register, 'email' | 'password'>) => baseUpdateProfile(user, { displayName: name })
 
 export const login = ({ email, password }: IForm.Login) => signInWithEmailAndPassword(auth, email, password)
-
-export const sendVerification = () => sendEmailVerification(auth.currentUser!, { url: `${window.location.origin}/verification` })
-
-export const emailVerify = (oobCode: string) => applyActionCode(auth, oobCode)
 
 export const confirmResetPassword = (oobCode: string, newPassword: string) => confirmPasswordReset(auth, oobCode, newPassword)
 

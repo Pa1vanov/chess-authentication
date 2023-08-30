@@ -34,7 +34,7 @@ const Register = () => {
 
       await Service.updateProfile(user, { name })
 
-      methods.update({ name, isVerified: false, email })
+      methods.update({ name, email })
     } catch (err: any) {
       if (err?.code === AuthErrorCodes.EMAIL_EXISTS) {
         notifications.show({ message: `this email ${email} already exist`, color: 'red' })

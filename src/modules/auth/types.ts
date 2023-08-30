@@ -3,7 +3,6 @@ export namespace IEntity {
     name: string
     avatarURL?: string
     email: string
-    isVerified: boolean
   }
 }
 export namespace IForm {

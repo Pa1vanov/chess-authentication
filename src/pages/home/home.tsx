@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { Button, Flex } from '@mantine/core'
 import { useAuth } from 'modules/auth/context'
-import { alert } from 'utils'
 
 import { Navbar } from 'components'
 
@@ -10,12 +9,7 @@ const Home = () => {
   const { user } = useAuth()
 
   const onStart = () => {
-    if (!user?.isVerified) {
-      alert.info('Email is not verified')
-      navigate('/verification')
-    } else {
-      navigate('/game')
-    }
+    navigate('/game')
   }
 
   return (
